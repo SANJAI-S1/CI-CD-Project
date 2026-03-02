@@ -1,6 +1,6 @@
 FROM maven:3.9.9-eclipse-temurin-21-jammy AS BUILD_IMAGE
 RUN git clone https://github.com/SANJAI-S1/CI-CD-Project.git
-RUN cd vprofile-project && mvn install
+RUN cd CI-CD-Project && mvn install
 
 FROM tomcat:10-jdk21
 
