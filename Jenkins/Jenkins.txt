@@ -1,0 +1,47 @@
+#Jenkins Installation & Setup Guide on Debian/Ubuntu
+1. Switch to Root User
+sudo -i
+
+2. Update Package Index
+sudo apt update
+
+3. Install Required Packages
+sudo apt install fontconfig openjdk-21-jre -y
+
+Verify Java installation:
+java -version
+
+4. Add Jenkins Repository Key
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+
+5. Add Jenkins Repository
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+6. Update Package Index Again
+sudo apt update
+
+7. Install Jenkins
+sudo apt install jenkins -y
+
+8. Start and Check Jenkins Service
+systemctl start jenkins
+systemctl status jenkins
+
+9. Jenkins Home Directory
+ls /var/lib/jenkins/
+
+10. Get Initial Admin Password
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Example Output:
+d243022dc6264d68ab67c8242b100e4a
+
+11. Jenkins Web Login
+
+URL: http://jenkins.localgoal652.com
+
+Username: admin
+Password: hello123
+Email: localgoal01@gmail.com
+Full Name: admin
